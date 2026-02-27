@@ -1,0 +1,171 @@
+/* Global */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin:0;
+  background: linear-gradient(135deg, #000000, #6b5b95);
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Main layout */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Left section: description */
+.left-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.left-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #d1b3ff;
+}
+
+.left-section p, .left-section li {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #eee;
+}
+
+.left-section ul {
+  margin-top: 20px;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Right section: converter card */
+.right-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.converter-card {
+  background: linear-gradient(145deg, #1a1a1a, #3c0f5b);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.converter-card:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+
+.converter-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #d1b3ff;
+}
+
+.converter-card input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.converter-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #6b5b95;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.converter-card button:hover {
+  background: #8743d0;
+}
+
+.converter-card p {
+  margin-top: 15px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+/* Universal button style */
+button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  background: linear-gradient(145deg, #6b5b95, #8c63ff);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(107,91,149,0.4), 0 0 15px rgba(140,99,255,0.3);
+}
+
+/* Button hover animation */
+button:hover {
+  background: linear-gradient(145deg, #8c63ff, #d1b3ff);
+  box-shadow: 0 12px 25px rgba(107,91,149,0.6), 0 0 25px rgba(140,99,255,0.6);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Button inner glow on click */
+button:active {
+  box-shadow: 0 6px 15px rgba(107,91,149,0.7), 0 0 20px rgba(140,99,255,0.7) inset;
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Optional: Neon border glow effect */
+button::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 18px;
+  background: linear-gradient(45deg, #d1b3ff, #8c63ff, #6b5b95, #d1b3ff);
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+button:hover::before {
+  opacity: 0.7;
+}
