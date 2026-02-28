@@ -52,7 +52,7 @@ convertBtn.addEventListener("click", async () => {
   const blob = new Blob([pdfBytes],{type:"application/pdf"});
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = "converted.pdf";
+  a.download = "Ficument-converted.pdf";
   a.click();
 
   status.textContent = "Done! Your PDF is ready.";
